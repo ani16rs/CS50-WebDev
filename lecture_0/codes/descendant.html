@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Descendant</title>
+        <style>
+            ul > li {               /* > means only CHILDREN li descendant of ul;   ul li means children, gchildren... li of ul */
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <ol>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <ul>
+                <li>sub list item 1</li>
+                <li>sub list item 2</li>
+            </ul>
+            <li>list item three</li>
+        </ol>
+    </body>
+</html>
