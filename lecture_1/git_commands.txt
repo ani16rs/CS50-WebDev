@@ -1,0 +1,15 @@
+git init    // initializes the project as git repo
+git clone   // clones the remote repo
+git pull    // syncs the remote git repo to local machine
+git pull    // pushes the changes from local repo to remote
+git add <file>  // tracks the file
+git commit -m "<message>"   // commits/snapshots the local repo
+git branch -a               // shows all the branches
+git checkout -b <branch>    // creates a new branch
+git checkout                // switch the HEAD to branch
+git merge <branch>          // merge changes in branch to current branch
+git reset --hard <commit>   // resets to the commit hash
+git reset --hard origin/<branch>  // resets to the remote repo version
+git log     // shows the git logs
+git status  // shows the status of modified files
+git remote add origin <repo_address>  // adds upstream address of the mentioned repo in the local project
