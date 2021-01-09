@@ -30,10 +30,10 @@ def add(request):
             return HttpResponseRedirect(reverse("tasks:index"))
 
         else:
-            return render(request, "rasks/add.html", {
+            return render(request, "tasks/add.html", {
                 "form": form
             })
 
-    return render(request, "tasks/add.html", {
+    return render(request, "tasks/add.html", {                      # render add.html as request.method != POST
         "form": NewTaskForm()
     })

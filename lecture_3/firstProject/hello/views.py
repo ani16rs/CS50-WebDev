@@ -14,5 +14,5 @@ def anu(request):
 
 def greet(request, name):
     return render(request, "hello/greet.html", {
-            "name": name.capitalize()
+        "name": name.capitalize()
     })
