@@ -1,0 +1,60 @@
+django-admin startproject PROJECT_NAME      -- create django project
+
+python manage.py runserver                  -- run server
+
+python manage.py startapp APP_NAME          -- create app
+
+settings.py > urls > INSTALLED APPS > append APP_NAME      -- install app
+
+
+~~ ROUTES ~~
+
+APP_NAME > views.py
+    functions that take in request (+ other parameters)
+    return HttpResponses or renders
+
+    to link this function with a url, vim urls.py in same dir as views.py
+    APP_NAME dir > urls.py >
+        from django.urls import path
+        from . import views
+
+        urlpatterns = [
+            path("", views.index, name="index")     // localhost:8080/APP_NAME
+            path("x", views.func1, name="func1")    // localhost:8080/APP_NAME/func1
+        ]
+    
+    to link this APP_NAME urls.py to the PROJECT_NAME urls.py
+    PROJECT_NAME dir > urls.py >
+        from django.contrib import admin
+        from django.urls import path, include
+
+        urlpatterns = [
+            path('admin/', admin.site.urls),
+            path('APP_NAME/', include("APP_NAME.urls"))
+        ]
+
+
+~~ TEMPLATES ~~
+
+cd APP_NAME > mkdir templates > mkdir APP_NAME > vim index.html/greet.html
+now our views.py functions can look like this:
+    def greet(request, name):
+        return render(request, "hello (APP_NAME)/greet.html", {
+            "name": name.capitalize()                   // passing parameters to greet.html
+        })
+    in greet.html, use name as {{ name }}
+    if else: 
+        {% if variable %}
+            ...
+        {% else %}
+            ...
+        {% endif %}
+
+
+~~ STATIC ~~
+
+    files that don't change; get their own folder in app
+    APP_NAME > mkdir static > mkdir APP_NAME > styles.css
+    {% load static %} to the top of our HTML template
+    <link rel="stylesheet" href="{% static 'newyear/styles.css' %}">
+
