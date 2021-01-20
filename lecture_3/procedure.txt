@@ -7,6 +7,15 @@ python manage.py startapp APP_NAME          -- create app
 settings.py > urls > INSTALLED APPS > append APP_NAME      -- install app
 
 
+// SHORT VERSION
+make project
+make app
+project > settings.py & make urls.py     -- add app
+app > make urls.py, templates, static, etc
+// end
+
+
+
 ~~ ROUTES ~~
 
 APP_NAME > views.py
@@ -57,4 +66,6 @@ now our views.py functions can look like this:
     APP_NAME > mkdir static > mkdir APP_NAME > styles.css
     {% load static %} to the top of our HTML template
     <link rel="stylesheet" href="{% static 'newyear/styles.css' %}">
+
+
 
