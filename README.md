@@ -1,7 +1,7 @@
 Web development with python and js
 cs50 lecture series
 
-Lecture 0: HTML, CSS
+Lecture 0: HTML, CSS \n
 Lecture 1: Git
 Lecture 2: Python
 Lecture 3: Django
