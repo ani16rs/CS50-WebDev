@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Scroll </title>
+    <script>
+
+      window.onscroll = () => {
+          if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+              document.querySelector('body').style.backgrounf = 'green';
+          }
+          else {
+              document.querySelector('body').style.backgrounf = 'white';
+          }
+      }
+
+    </script>
+  </head>
